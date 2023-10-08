@@ -1,0 +1,17 @@
+model {
+   name : "lenet"
+   kernel {
+         name: "lenet_0"
+         mean: 100
+
+
+         scale: 0.02
+
+   }
+   model_type : CLASSIFICATION
+   classification_param {
+          top_k : 5
+          test_accuracy : false
+          preprocess_type : UNKNOWN_TYPE
+   }
+}
