@@ -40,12 +40,12 @@ parser.add_argument('--epoches', type=int, default=1, help='Train epoch')
 parser.add_argument(
     '--pretrained',
     type=str,
-    default='/home/gpuforthesis/optimiser/lenet/lenet.pth',
+    default='/home/gpuforthesis/Optimiser/lenet/lenet.pth',
     help='Pretrained model filepath')
 parser.add_argument(
     '--data_dir',
     type=str,
-    default='/home/gpuforthesis/optimiser/imagenet',
+    default='/home/gpuforthesis/Optimiser/lenet',
     help='Dataset directory')
 parser.add_argument(
     '--num_workers',
@@ -259,7 +259,7 @@ if __name__ == '__main__':
   #     ]))
   
   data_transform = transforms.Compose([transforms.ToTensor()])
-  train_dataset = torchvision.datasets.MNIST(root='./data', train=True, transform=data_transform, download=True)
+  train_dataset = datasets.MNIST(root='./data', train=True, transform=data_transform, download=True)
 
   train_loader = torch.utils.data.DataLoader(
       train_dataset,
@@ -268,7 +268,7 @@ if __name__ == '__main__':
       num_workers=args.num_workers,
       pin_memory=True)
 
-  val_dataset = torchvision.datasets.MNIST(root='./data', train=False, transform=data_transform, download=True)
+  val_dataset = datasets.MNIST(root='./data', train=False, transform=data_transform, download=True)
 
   val_loader = torch.utils.data.DataLoader(
       val_dataset,
@@ -290,7 +290,7 @@ if __name__ == '__main__':
   gpus = get_gpus(args.gpus)
   model.to(device)
   criterion = torch.nn.CrossEntropyLoss().cuda()
-  input_signature = torch.randn([1, 3, 224, 224], dtype=torch.float32)
+  input_signature = torch.randn([1, 1, 28, 28], dtype=torch.float32)
   input_signature = input_signature.to(device)
 
   pruning_runner = get_pruning_runner(

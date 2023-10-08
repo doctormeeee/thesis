@@ -1,0 +1,94 @@
+{
+  "c1": {
+    "node": "MyLeNet5::MyLeNet5/Conv2d[c1]/ret.3",
+    "ratio": 0.5,
+    "removed_outputs": [
+      3,
+      4
+    ],
+    "out_dim": 4,
+    "removed_inputs": [],
+    "in_dim": 0,
+    "master": true
+  },
+  "c3": {
+    "node": "MyLeNet5::MyLeNet5/Conv2d[c3]/ret.7",
+    "ratio": null,
+    "removed_outputs": [],
+    "out_dim": 16,
+    "removed_inputs": [
+      3,
+      4
+    ],
+    "in_dim": 4,
+    "master": false
+  },
+  "c5": {
+    "node": "MyLeNet5::MyLeNet5/Conv2d[c5]/ret.11",
+    "ratio": 0.2,
+    "removed_outputs": [
+      89,
+      45,
+      64,
+      60,
+      82,
+      8,
+      105,
+      80,
+      48,
+      74,
+      109,
+      38,
+      58,
+      52,
+      28,
+      119,
+      65,
+      57,
+      13,
+      70,
+      0,
+      40,
+      84,
+      101
+    ],
+    "out_dim": 96,
+    "removed_inputs": [],
+    "in_dim": 16,
+    "master": true
+  },
+  "f6": {
+    "node": "MyLeNet5::MyLeNet5/Linear[f6]/ret.15",
+    "ratio": null,
+    "removed_outputs": [],
+    "out_dim": 84,
+    "removed_inputs": [
+      89,
+      45,
+      64,
+      60,
+      82,
+      8,
+      105,
+      80,
+      48,
+      74,
+      109,
+      38,
+      58,
+      52,
+      28,
+      119,
+      65,
+      57,
+      13,
+      70,
+      0,
+      40,
+      84,
+      101
+    ],
+    "in_dim": 96,
+    "master": false
+  }
+}
