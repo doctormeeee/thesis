@@ -1,0 +1,227 @@
+----------------------------------------------------------
+Total number of segment blocks: 7
+Number of wego segment blocks: 3
+Number of torch segment blocks: 4
+----------------------------------------------------------
+Segments Blocks Details: 
+
+SegmentBlock: [
+id: 0
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 0
+subgraph graph: 
+graph(%input.2 : Tensor):
+  %2 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %3 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %4 : float = prim::Constant[value=64.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %5 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %6 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %7 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %input0.1 : Tensor = vai::fix_neuron(%input.2, %2, %3, %4, %5, %6, %7, %5) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%input0.1)
+
+]
+
+
+SegmentBlock: [
+id: 1
+type: WeGO
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 1
+subgraph graph: 
+graph(%input0.1 : Tensor):
+  %1 : Float(6, 1, 5, 5, strides=[25, 25, 5, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %2 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %3 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %4 : float = prim::Constant[value=64.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %5 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %6 : int = prim::Constant[value=3]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %7 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %9 : Float(6, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value= 0.3906  1.1406  0.0781 -1.2656  0.2812 -1.1875 [ CPUFloatType{6} ]]()
+  %12 : int[] = prim::Constant[value=[1, 1]]()
+  %13 : int[] = prim::Constant[value=[2, 2]]()
+  %15 : float = prim::Constant[value=16.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %16 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qweight.2 : Tensor = vai::fix_neuron(%1, %2, %3, %4, %5, %6, %7, %5) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qbias.2 : Tensor = vai::fix_neuron(%9, %2, %3, %4, %5, %6, %7, %5) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %10 : Tensor = aten::conv2d(%input0.1, %qweight.2, %qbias.2, %12, %13, %12, %7)
+  %input.4 : Tensor = vai::fix_neuron(%10, %2, %3, %15, %5, %16, %7, %5) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%input.4)
+
+]
+
+
+SegmentBlock: [
+id: 2
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 1
+subgraph graph: 
+graph(%input.4 : Tensor):
+  %3 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %4 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %5 : float = prim::Constant[value=128.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %6 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %7 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %8 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %tensor.4 : Tensor = aten::sigmoid(%input.4) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/nn/modules/activation.py:290:0
+  %input.6 : Tensor = vai::fix_neuron(%tensor.4, %3, %4, %5, %6, %7, %8, %6) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%input.6)
+
+]
+
+
+SegmentBlock: [
+id: 3
+type: WeGO
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 3
+subgraph graph: 
+graph(%input.6 : Tensor):
+  %2 : int[] = prim::Constant[value=[2, 2]]()
+  %3 : int[] = prim::Constant[value=[0, 0]]()
+  %4 : bool = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/conv.py:117:0
+  %5 : bool = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/conv.py:117:0
+  %6 : NoneType = prim::Constant()
+  %8 : Tensor = prim::Constant[value={1}]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %10 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %11 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %12 : float = prim::Constant[value=128.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %13 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %14 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %15 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %17 : Float(16, 6, 5, 5, strides=[150, 25, 5, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %18 : int = prim::Constant[value=3]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %20 : Float(16, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %21 : float = prim::Constant[value=256.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %23 : int[] = prim::Constant[value=[1, 1]]()
+  %25 : float = prim::Constant[value=8.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %output.2 : Tensor = aten::avg_pool2d(%input.6, %2, %2, %3, %4, %5, %6) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/nn/modules/pooling.py:627:0
+  %tensor.6 : Tensor = aten::mul(%output.2, %8) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %input.8 : Tensor = vai::fix_neuron(%tensor.6, %10, %11, %12, %13, %14, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qweight.4 : Tensor = vai::fix_neuron(%17, %10, %11, %12, %13, %18, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qbias.4 : Tensor = vai::fix_neuron(%20, %10, %11, %21, %13, %18, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %22 : Tensor = aten::conv2d(%input.8, %qweight.4, %qbias.4, %23, %3, %23, %15)
+  %input.10 : Tensor = vai::fix_neuron(%22, %10, %11, %25, %13, %14, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%input.10)
+
+]
+
+
+SegmentBlock: [
+id: 4
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 1
+subgraph graph: 
+graph(%input.10 : Tensor):
+  %3 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %4 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %5 : float = prim::Constant[value=128.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %6 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %7 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %8 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %tensor.10 : Tensor = aten::sigmoid(%input.10) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/nn/modules/activation.py:290:0
+  %input.12 : Tensor = vai::fix_neuron(%tensor.10, %3, %4, %5, %6, %7, %8, %6) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%input.12)
+
+]
+
+
+SegmentBlock: [
+id: 5
+type: WeGO
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 3
+subgraph graph: 
+graph(%input.12 : Tensor):
+  %2 : int[] = prim::Constant[value=[2, 2]]()
+  %3 : int[] = prim::Constant[value=[0, 0]]()
+  %4 : bool = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/conv.py:117:0
+  %5 : bool = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/conv.py:117:0
+  %6 : NoneType = prim::Constant()
+  %8 : Tensor = prim::Constant[value={1}]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %10 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %11 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %12 : float = prim::Constant[value=128.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %13 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %14 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %15 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %17 : Float(120, 16, 5, 5, strides=[400, 25, 5, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %18 : float = prim::Constant[value=512.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %19 : int = prim::Constant[value=3]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %21 : Float(120, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %22 : float = prim::Constant[value=1024.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %24 : int[] = prim::Constant[value=[1, 1]]()
+  %output.1 : Tensor = aten::avg_pool2d(%input.12, %2, %2, %3, %4, %5, %6) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/nn/modules/pooling.py:627:0
+  %tensor.12 : Tensor = aten::mul(%output.1, %8) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %input.14 : Tensor = vai::fix_neuron(%tensor.12, %10, %11, %12, %13, %14, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qweight.6 : Tensor = vai::fix_neuron(%17, %10, %11, %18, %13, %19, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qbias.6 : Tensor = vai::fix_neuron(%21, %10, %11, %22, %13, %19, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %23 : Tensor = aten::conv2d(%input.14, %qweight.6, %qbias.6, %24, %3, %24, %15)
+  %25 : Tensor = vai::fix_neuron(%23, %10, %11, %12, %13, %14, %15, %13) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%25)
+
+]
+
+
+SegmentBlock: [
+id: 6
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 3
+subgraph graph: 
+graph(%1 : Tensor):
+  %2 : int = prim::Constant[value=1]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %3 : int = prim::Constant[value=-1]()
+  %5 : Float(84, 120, strides=[120, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %6 : int = prim::Constant[value=-128]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %7 : int = prim::Constant[value=127]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %8 : float = prim::Constant[value=256.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %9 : int = prim::Constant[value=0]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %10 : int = prim::Constant[value=3]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %12 : Float(84, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %13 : float = prim::Constant[value=1024.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %16 : float = prim::Constant[value=32.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %17 : int = prim::Constant[value=2]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %19 : Float(10, 84, strides=[84, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %20 : float = prim::Constant[value=128.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %22 : Float(10, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=0.01 *  0.9766 -17.7734  4.6875  5.2734 -9.1797 -0.9766  4.6875  1.9531  5.6641  5.4688 [ CPUFloatType{10} ]]()
+  %23 : float = prim::Constant[value=512.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %26 : float = prim::Constant[value=8.]() # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %0 : Tensor = aten::flatten(%1, %2, %3) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/module_template.py:132:0
+  %qweight.8 : Tensor = vai::fix_neuron(%5, %6, %7, %8, %9, %10, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qbias.8 : Tensor = vai::fix_neuron(%12, %6, %7, %13, %9, %10, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %tensor.16 : Tensor = aten::linear(%0, %qweight.8, %qbias.8) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/linear.py:120:0
+  %input.1 : Tensor = vai::fix_neuron(%tensor.16, %6, %7, %16, %9, %17, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qweight.1 : Tensor = vai::fix_neuron(%19, %6, %7, %20, %9, %10, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %qbias.1 : Tensor = vai::fix_neuron(%22, %6, %7, %23, %9, %10, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  %tensor.1 : Tensor = aten::linear(%input.1, %qweight.1, %qbias.1) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/pytorch_nndct/nn/modules/linear.py:120:0
+  %25 : Tensor = vai::fix_neuron(%tensor.1, %6, %7, %26, %9, %17, %2, %9) # /opt/vitis_ai/conda/envs/vitis-ai-wego-torch/lib/python3.7/site-packages/torch/_ops.py:143:0
+  return (%25)
+
+]
+
+
