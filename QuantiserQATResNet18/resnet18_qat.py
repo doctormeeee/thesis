@@ -16,11 +16,11 @@ from pytorch_nndct import QatProcessor
 parser = argparse.ArgumentParser()
 parser.add_argument(
     '--data_dir',
-    default='/workspace/resnet18/imagenet',
+    default='./imagenet',
     help='Data set directory.')
 parser.add_argument(
     '--pretrained',
-    default='/workspace/resnet18/model/resnet18.pth',
+    default='./model/resnet18.pth',
     help='Pre-trained model file path.')
 parser.add_argument(
     '--workers',
