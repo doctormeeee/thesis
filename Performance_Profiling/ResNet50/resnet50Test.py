@@ -5,7 +5,7 @@ from torchvision import datasets, transforms
 from torchvision.models.resnet import resnet50
 from tqdm import tqdm
 
-def load_data(data_dir='imagenet', batch_size=128):
+def load_data(data_dir='imagenet', batch_size=''):
 
 	valdir = data_dir + '/val'
 	normalize = transforms.Normalize(
@@ -93,14 +93,22 @@ if __name__ == "__main__":
 	data_transform = transforms.Compose([transforms.ToTensor()])
 
 	device = "cuda" if torch.cuda.is_available() else 'cpu'
+ 
+	torch.cuda.empty_cache()  # Clear any previously allocated memory
+	allocated_memory = 0.8  # Specify your desired fraction (e.g., 50%)
+	torch.cuda.set_per_process_memory_fraction(allocated_memory)
+	
+	# device = 'cpu'
 
+	# model = resnet50().to(device)
+ 
 	model = resnet50().to(device)
 
 	model.load_state_dict(torch.load("./model/resnet50.pth"))
 
 	loss_fn = torch.nn.CrossEntropyLoss().to(device)
 
-	val_loader = load_data(data_dir='imagenet', batch_size=128)
+	val_loader = load_data(data_dir='imagenet', batch_size=10)
 
 	acc1_gen, acc5_gen, loss_gen = evaluate(model, val_loader, loss_fn)
 
