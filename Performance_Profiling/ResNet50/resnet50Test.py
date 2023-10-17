@@ -8,8 +8,8 @@ import time
 
 def load_data(data_dir='', batch_size=''):
 
-	# valdir = data_dir + '/val'
-	valdir = data_dir
+	valdir = data_dir + '/val'
+	# valdir = data_dir
 	normalize = transforms.Normalize(
 		mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 	size = 224
@@ -27,53 +27,53 @@ def load_data(data_dir='', batch_size=''):
 		dataset, batch_size=batch_size, shuffle=False)
 	return data_loader
 
-class AverageMeter(object):
-	"""Computes and stores the average and current value"""
+# class AverageMeter(object):
+# 	"""Computes and stores the average and current value"""
 
-	def __init__(self, name, fmt=':f'):
-		self.name = name
-		self.fmt = fmt
-		self.reset()
+# 	def __init__(self, name, fmt=':f'):
+# 		self.name = name
+# 		self.fmt = fmt
+# 		self.reset()
 
-	def reset(self):
-		self.val = 0
-		self.avg = 0
-		self.sum = 0
-		self.count = 0
+# 	def reset(self):
+# 		self.val = 0
+# 		self.avg = 0
+# 		self.sum = 0
+# 		self.count = 0
 
-	def update(self, val, n=1):
-		self.val = val
-		self.sum += val * n
-		self.count += n
-		self.avg = self.sum / self.count
+# 	def update(self, val, n=1):
+# 		self.val = val
+# 		self.sum += val * n
+# 		self.count += n
+# 		self.avg = self.sum / self.count
 
-	def __str__(self):
-		fmtstr = '{name} {val' + self.fmt + '} ({avg' + self.fmt + '})'
-		return fmtstr.format(**self.__dict__)
+# 	def __str__(self):
+# 		fmtstr = '{name} {val' + self.fmt + '} ({avg' + self.fmt + '})'
+# 		return fmtstr.format(**self.__dict__)
 
-def accuracy(output, target, topk=(1,)):
-	"""Computes the accuracy over the k top predictions
-	for the specified values of k"""
-	with torch.no_grad():
-		maxk = max(topk)
-		batch_size = target.size(0)
+# def accuracy(output, target, topk=(1,)):
+# 	"""Computes the accuracy over the k top predictions
+# 	for the specified values of k"""
+# 	with torch.no_grad():
+# 		maxk = max(topk)
+# 		batch_size = target.size(0)
 
-		_, pred = output.topk(maxk, 1, True, True)
-		pred = pred.t()
-		correct = pred.eq(target.view(1, -1).expand_as(pred))
+# 		_, pred = output.topk(maxk, 1, True, True)
+# 		pred = pred.t()
+# 		correct = pred.eq(target.view(1, -1).expand_as(pred))
 
-		res = []
-	for k in topk:
-		correct_k = correct[:k].flatten().float().sum(0, keepdim=True)
-		res.append(correct_k.mul_(100.0 / batch_size))
-	return res
+# 		res = []
+# 	for k in topk:
+# 		correct_k = correct[:k].flatten().float().sum(0, keepdim=True)
+# 		res.append(correct_k.mul_(100.0 / batch_size))
+# 	return res
 
 def evaluate(model, val_loader, loss_fn):
 
 	model.eval()
 	model = model.to(device)
-	top1 = AverageMeter('Acc@1', ':6.2f')
-	top5 = AverageMeter('Acc@5', ':6.2f')
+	# top1 = AverageMeter('Acc@1', ':6.2f')
+	# top5 = AverageMeter('Acc@5', ':6.2f')
 	total = 0
 	Loss = 0
 	for iteraction, (images, labels) in tqdm(
@@ -83,31 +83,28 @@ def evaluate(model, val_loader, loss_fn):
 		labels = labels.to(device)
 		#pdb.set_trace()
 		outputs = model(images)
-		loss = loss_fn(outputs, labels)
+		# print(f"Output tensor: {torch.argmax(outputs, axis=1)}")
+
+		# loss = loss_fn(outputs, labels)
 		# print(torch.argmax(outputs, axis=1))
 		# print(outputs.size())
 		# print(torch.max(outputs, axis=1)[1])
 		# print(labels)
-		Loss += loss.item()
-		total += images.size(0)
-		acc1, acc5 = accuracy(outputs, labels, topk=(1, 5))
-		top1.update(acc1[0], images.size(0))
-		top5.update(acc5[0], images.size(0))
-	return top1.avg, top5.avg, Loss / total
+		# Loss += loss.item()
+		# total += images.size(0)
+		# acc1, acc5 = accuracy(outputs, labels, topk=(1, 5))
+		# top1.update(acc1[0], images.size(0))
+		# top5.update(acc5[0], images.size(0))
+	# return top1.avg, top5.avg, Loss / total
 
 
 if __name__ == "__main__":
 	data_transform = transforms.Compose([transforms.ToTensor()])
 
-	device = "cuda" if torch.cuda.is_available() else 'cpu'
- 
-	torch.cuda.empty_cache()  # Clear any previously allocated memory
-	allocated_memory = 0.8  # Specify your desired fraction (e.g., 50%)
-	torch.cuda.set_per_process_memory_fraction(allocated_memory)
+	# device = "cuda" if torch.cuda.is_available() else 'cpu'
 	
-	# device = 'cpu'
+	device = 'cpu'
 
-	# model = resnet50().to(device)
  
 	model = resnet50().to(device)
 
@@ -116,7 +113,7 @@ if __name__ == "__main__":
 	loss_fn = torch.nn.CrossEntropyLoss().to(device)
 
 	# val_loader = load_data(data_dir='imagenet', batch_size=10)
-	val_loader = load_data(data_dir='img', batch_size=10)
+	val_loader = load_data(data_dir='imagenet', batch_size=8)
 
 	start_time = time.time()
  
