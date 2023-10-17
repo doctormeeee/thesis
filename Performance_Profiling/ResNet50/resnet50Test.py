@@ -101,9 +101,11 @@ def evaluate(model, val_loader, loss_fn):
 if __name__ == "__main__":
 	data_transform = transforms.Compose([transforms.ToTensor()])
 
-	# device = "cuda" if torch.cuda.is_available() else 'cpu'
-	
-	device = 'cpu'
+	device = "cuda" if torch.cuda.is_available() else 'cpu'
+ 	
+	# device = 'cpu'
+ 
+	print("Platform:", device)
 
  
 	model = resnet50().to(device)
