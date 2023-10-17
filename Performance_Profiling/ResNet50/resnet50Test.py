@@ -118,7 +118,9 @@ if __name__ == "__main__":
 	start_time = time.time()
  
 
-	acc1_gen, acc5_gen, loss_gen = evaluate(model, val_loader, loss_fn)
+	# acc1_gen, acc5_gen, loss_gen = evaluate(model, val_loader, loss_fn)
+ 	
+	evaluate(model, val_loader, loss_fn)
  
 	end_time = time.time()
  
