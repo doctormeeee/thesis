@@ -129,8 +129,8 @@ if __name__ == "__main__":
 	print(f'Execution time: {execution_time}')
 
 	# logging accuracy
-	print('loss: %g' % (loss_gen))
-	print('top-1 / top-5 accuracy: %g / %g' % (acc1_gen, acc5_gen))
+	# print('loss: %g' % (loss_gen))
+	# print('top-1 / top-5 accuracy: %g / %g' % (acc1_gen, acc5_gen))
 
 # show = ToPILImage()
 
