@@ -8,7 +8,7 @@ import time
 
 def load_data(data_dir='', batch_size=''):
 
-	valdir = data_dir + '/val'
+	valdir = data_dir + '/profiling_set'
 	# valdir = data_dir
 	normalize = transforms.Normalize(
 		mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -102,9 +102,9 @@ if __name__ == "__main__":
 	data_transform = transforms.Compose([transforms.ToTensor()])
 
 	device = "cuda" if torch.cuda.is_available() else 'cpu'
- 	
+	
 	# device = 'cpu'
- 
+
 	print("Platform:", device)
 
  
