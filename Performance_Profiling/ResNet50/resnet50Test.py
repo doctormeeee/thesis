@@ -8,7 +8,7 @@ import time
 
 def load_data(data_dir='', batch_size=''):
 
-	valdir = data_dir + '/val'
+	valdir = data_dir + '/profiling_set'
 	# valdir = data_dir
 	normalize = transforms.Normalize(
 		mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -115,7 +115,7 @@ if __name__ == "__main__":
 	loss_fn = torch.nn.CrossEntropyLoss().to(device)
 
 	# val_loader = load_data(data_dir='imagenet', batch_size=10)
-	val_loader = load_data(data_dir='imagenet', batch_size=8)
+	val_loader = load_data(data_dir='imagenet', batch_size=128)
 
 	start_time = time.time()
  

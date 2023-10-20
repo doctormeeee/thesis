@@ -43,7 +43,7 @@ using namespace cv;
 GraphInfo shapes;
 
 // const string baseImagePath = "../images/";
-const string baseImagePath = "../images/tiny-imagenet-200/val/images/";
+const string baseImagePath = "../images/tiny-imagenet-200/profiling_set/images/";
 const string wordsPath = "./";
 
 /**
@@ -201,6 +201,10 @@ void runResnet50(vart::Runner* runner) {
   int inWidth = shapes.inTensorList[0].width;
 
   int batchSize = in_dims[0];
+  batchSize = 8;
+  printf("In size: %d\n", inSize);
+  printf("Out size: %d\n", outSize);
+  printf("Batch size: %d\n", batchSize);
 
   std::vector<std::unique_ptr<vart::TensorBuffer>> inputs, outputs;
 
@@ -255,18 +259,18 @@ void runResnet50(vart::Runner* runner) {
     /*run*/
     auto job_id = runner->execute_async(inputsPtr, outputsPtr);
     runner->wait(job_id.first, -1);
-    for (unsigned int i = 0; i < runSize; i++) {
-      cout << "\nImage : " << images[n + i] << endl;
-      /* Calculate softmax on CPU and display TOP-5 classification results */
-      CPUCalcSoftmax(&FCResult[i * outSize], outSize, softmax, output_scale);
-      TopK(softmax, outSize, 5, kinds);
-      /* Display the impage */
-      bool quiet = (getenv("QUIET_RUN") != nullptr);
-      if (!quiet) {
-        // cv::imshow("Classification of ResNet50", imageList[i]);
-        // cv::waitKey(10000);
-      }
-    }
+    // for (unsigned int i = 0; i < runSize; i++) {
+    //   cout << "\nImage : " << images[n + i] << endl;
+    //   /* Calculate softmax on CPU and display TOP-5 classification results */
+    //   CPUCalcSoftmax(&FCResult[i * outSize], outSize, softmax, output_scale);
+    //   TopK(softmax, outSize, 5, kinds);
+    //   /* Display the impage */
+    //   bool quiet = (getenv("QUIET_RUN") != nullptr);
+    //   if (!quiet) {
+    //     // cv::imshow("Classification of ResNet50", imageList[i]);
+    //     // cv::waitKey(10000);
+    //   }
+    // }
     imageList.clear();
     inputs.clear();
     outputs.clear();
