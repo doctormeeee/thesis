@@ -34,16 +34,16 @@ parser.add_argument(
 )
 parser.add_argument(
     '--num_subnet', type=int, default=20, help='Total number of subnet')
-parser.add_argument('--epoches', type=int, default=1, help='Train epoch')
+parser.add_argument('--epoches', type=int, default=10, help='Train epoch')
 parser.add_argument(
     '--pretrained',
     type=str,
-    default='/home/gpuforthesis/optimiser/resnet18.pth',
+    default='/home/gpuforthesis/Optimiser/resnet18.pth',
     help='Pretrained model filepath')
 parser.add_argument(
     '--data_dir',
     type=str,
-    default='/home/gpuforthesis/optimiser/imagenet',
+    default='/home/gpuforthesis/Optimiser/imagenet',
     help='Dataset directory')
 parser.add_argument(
     '--num_workers',
