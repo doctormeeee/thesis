@@ -1,0 +1,61 @@
+digraph MyLeNet5 {
+	input_0 [label="type:nndct_input
+name:MyLeNet5::input_0
+assigned device:user
+out shape:[[1, 28, 28, 3]]" color=black]
+	"MyLeNet5/Conv2d[c1]/ret.3" [label="type:nndct_conv2d
+name:MyLeNet5::MyLeNet5/Conv2d[c1]/ret.3
+assigned device:dpu
+out shape:[[1, 28, 28, 6]]" color=blue]
+	"MyLeNet5/ReLU[relu]/ret.5" [label="type:nndct_relu
+name:MyLeNet5::MyLeNet5/ReLU[relu]/ret.5
+assigned device:dpu
+out shape:[[1, 28, 28, 6]]" color=blue]
+	"MyLeNet5/AvgPool2d[s2]/387" [label="type:nndct_avgpool
+name:MyLeNet5::MyLeNet5/AvgPool2d[s2]/387
+assigned device:dpu
+out shape:[[1, 14, 14, 6]]" color=blue]
+	"MyLeNet5/Conv2d[c3]/ret.7" [label="type:nndct_conv2d
+name:MyLeNet5::MyLeNet5/Conv2d[c3]/ret.7
+assigned device:dpu
+out shape:[[1, 10, 10, 16]]" color=blue]
+	"MyLeNet5/ReLU[relu]/ret.9" [label="type:nndct_relu
+name:MyLeNet5::MyLeNet5/ReLU[relu]/ret.9
+assigned device:dpu
+out shape:[[1, 10, 10, 16]]" color=blue]
+	"MyLeNet5/AvgPool2d[s4]/424" [label="type:nndct_avgpool
+name:MyLeNet5::MyLeNet5/AvgPool2d[s4]/424
+assigned device:dpu
+out shape:[[1, 5, 5, 16]]" color=blue]
+	"MyLeNet5/Conv2d[c5]/ret.11" [label="type:nndct_conv2d
+name:MyLeNet5::MyLeNet5/Conv2d[c5]/ret.11
+assigned device:dpu
+out shape:[[1, 1, 1, 120]]" color=blue]
+	"MyLeNet5/Flatten[flatten]/ret.13" [label="type:nndct_reshape
+name:MyLeNet5::MyLeNet5/Flatten[flatten]/ret.13
+assigned device:dpu
+out shape:[[1, 120]]" color=blue]
+	"MyLeNet5/Linear[f6]/ret.15" [label="type:nndct_dense
+name:MyLeNet5::MyLeNet5/Linear[f6]/ret.15
+assigned device:dpu
+out shape:[[1, 84]]" color=blue]
+	"MyLeNet5/Linear[output]/ret" [label="type:nndct_dense
+name:MyLeNet5::MyLeNet5/Linear[output]/ret
+assigned device:dpu
+out shape:[[1, 10]]" color=blue]
+	return_0 [label="type:nndct_return
+name:MyLeNet5::return_0
+assigned device:user
+out shape:[]" color=black]
+	input_0 -> "MyLeNet5/Conv2d[c1]/ret.3"
+	"MyLeNet5/Conv2d[c1]/ret.3" -> "MyLeNet5/ReLU[relu]/ret.5"
+	"MyLeNet5/ReLU[relu]/ret.5" -> "MyLeNet5/AvgPool2d[s2]/387"
+	"MyLeNet5/AvgPool2d[s2]/387" -> "MyLeNet5/Conv2d[c3]/ret.7"
+	"MyLeNet5/Conv2d[c3]/ret.7" -> "MyLeNet5/ReLU[relu]/ret.9"
+	"MyLeNet5/ReLU[relu]/ret.9" -> "MyLeNet5/AvgPool2d[s4]/424"
+	"MyLeNet5/AvgPool2d[s4]/424" -> "MyLeNet5/Conv2d[c5]/ret.11"
+	"MyLeNet5/Conv2d[c5]/ret.11" -> "MyLeNet5/Flatten[flatten]/ret.13"
+	"MyLeNet5/Flatten[flatten]/ret.13" -> "MyLeNet5/Linear[f6]/ret.15"
+	"MyLeNet5/Linear[f6]/ret.15" -> "MyLeNet5/Linear[output]/ret"
+	"MyLeNet5/Linear[output]/ret" -> return_0
+}
