@@ -1,0 +1,459 @@
+----------------------------------------------------------
+Total number of segment blocks: 3
+Number of wego segment blocks: 1
+Number of torch segment blocks: 2
+----------------------------------------------------------
+Segments Blocks Details: 
+
+SegmentBlock: [
+id: 0
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 0
+subgraph graph: 
+graph(%qinput.2 : Tensor):
+  %2 : int = prim::Constant[value=-128]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %3 : int = prim::Constant[value=127]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %4 : float = prim::Constant[value=32.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %5 : int = prim::Constant[value=0]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %6 : int = prim::Constant[value=2]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %7 : int = prim::Constant[value=1]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qinput0.1 : Tensor = vai::fix_neuron(%qinput.2, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  return (%qinput0.1)
+
+]
+
+
+SegmentBlock: [
+id: 1
+type: WeGO
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 108
+subgraph graph: 
+graph(%qinput0.1 : Tensor):
+  %1 : Float(24, 3, 3, 3, strides=[27, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %2 : int = prim::Constant[value=-128]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %3 : int = prim::Constant[value=127]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %4 : float = prim::Constant[value=32.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %5 : int = prim::Constant[value=0]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %6 : int = prim::Constant[value=3]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %7 : int = prim::Constant[value=1]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %9 : Float(24, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %10 : float = prim::Constant[value=8.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %13 : int[] = prim::Constant[value=[2, 2]]()
+  %14 : int[] = prim::Constant[value=[1, 1]]()
+  %17 : int = prim::Constant[value=2]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %19 : Float(64, 24, 3, 3, strides=[216, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %20 : float = prim::Constant[value=64.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %22 : Float(64, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %23 : float = prim::Constant[value=4.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %28 : int[] = prim::Constant[value=[3, 3]]()
+  %29 : bool = prim::Constant[value=0]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/conv.py:115:0
+  %32 : int[] = prim::Constant[value=[0, 0]]()
+  %33 : bool = prim::Constant[value=1]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/conv.py:115:0
+  %34 : NoneType = prim::Constant() # :0:0
+  %36 : Tensor = prim::Constant[value={1}]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %39 : Float(168, 64, 1, 1, strides=[64, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %41 : Float(168, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %45 : Float(32, 64, 1, 1, strides=[64, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %46 : float = prim::Constant[value=128.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %48 : Float(32, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %53 : Float(32, 32, 3, 3, strides=[288, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %55 : Float(32, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %56 : float = prim::Constant[value=16.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %61 : Float(168, 32, 1, 1, strides=[32, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %63 : Float(168, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %70 : Float(40, 168, 1, 1, strides=[168, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %71 : float = prim::Constant[value=256.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %73 : Float(40, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %78 : Float(40, 40, 3, 3, strides=[360, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %80 : Float(40, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %85 : Float(168, 40, 1, 1, strides=[40, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %87 : Float(168, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %97 : Float(336, 168, 1, 1, strides=[168, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %99 : Float(336, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %103 : Float(64, 168, 1, 1, strides=[168, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %105 : Float(64, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %110 : Float(64, 64, 3, 3, strides=[576, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %112 : Float(64, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %117 : Float(336, 64, 1, 1, strides=[64, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %119 : Float(336, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %126 : Float(88, 336, 1, 1, strides=[336, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %128 : Float(88, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %133 : Float(88, 88, 3, 3, strides=[792, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %135 : Float(88, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %140 : Float(336, 88, 1, 1, strides=[88, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %142 : Float(336, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %149 : Float(64, 336, 1, 1, strides=[336, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %151 : Float(64, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %156 : Float(64, 64, 3, 3, strides=[576, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %158 : Float(64, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %163 : Float(336, 64, 1, 1, strides=[64, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %165 : Float(336, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %175 : Float(816, 336, 1, 1, strides=[336, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %177 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %181 : Float(160, 336, 1, 1, strides=[336, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %183 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %188 : Float(160, 160, 3, 3, strides=[1440, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %190 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %195 : Float(816, 160, 1, 1, strides=[160, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %197 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %204 : Float(160, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %206 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %211 : Float(160, 160, 3, 3, strides=[1440, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %213 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %218 : Float(816, 160, 1, 1, strides=[160, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %220 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %227 : Float(208, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %229 : Float(208, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %234 : Float(208, 208, 3, 3, strides=[1872, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %236 : Float(208, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %241 : Float(816, 208, 1, 1, strides=[208, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %243 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %250 : Float(160, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %252 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %257 : Float(160, 160, 3, 3, strides=[1440, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %259 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %264 : Float(816, 160, 1, 1, strides=[160, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %266 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %273 : Float(160, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %275 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %280 : Float(160, 160, 3, 3, strides=[1440, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %282 : Float(160, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %287 : Float(816, 160, 1, 1, strides=[160, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %289 : Float(816, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %299 : Float(1640, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %301 : Float(1640, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %305 : Float(408, 816, 1, 1, strides=[816, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %307 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %312 : Float(408, 408, 3, 3, strides=[3672, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %314 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %319 : Float(1640, 408, 1, 1, strides=[408, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %321 : Float(1640, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %328 : Float(408, 1640, 1, 1, strides=[1640, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %329 : float = prim::Constant[value=512.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %331 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %336 : Float(408, 408, 3, 3, strides=[3672, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %338 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %343 : Float(1640, 408, 1, 1, strides=[408, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %345 : Float(1640, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %346 : float = prim::Constant[value=2.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %353 : Float(408, 1640, 1, 1, strides=[1640, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %355 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %360 : Float(408, 408, 3, 3, strides=[3672, 9, 3, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %362 : Float(408, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %367 : Float(1640, 408, 1, 1, strides=[408, 1, 1, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %369 : Float(1640, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %qweight.2 : Tensor = vai::fix_neuron(%1, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.2 : Tensor = vai::fix_neuron(%9, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %11 : Tensor = aten::conv2d(%qinput0.1, %qweight.2, %qbias.2, %13, %14, %14, %7)
+  %input.4 : Tensor = aten::relu_(%11) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.4 : Tensor = vai::fix_neuron(%input.4, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.4 : Tensor = vai::fix_neuron(%19, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.4 : Tensor = vai::fix_neuron(%22, %2, %3, %23, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %24 : Tensor = aten::conv2d(%qinput.4, %qweight.4, %qbias.4, %14, %14, %14, %7)
+  %input.8 : Tensor = aten::relu_(%24) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %input0.2 : Tensor = vai::fix_neuron(%input.8, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.10 : Tensor = aten::max_pool2d(%input0.2, %28, %13, %14, %14, %29) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:586:0
+  %input0.4 : Tensor = vai::fix_neuron(%input.10, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %output.2 : Tensor = aten::avg_pool2d(%input0.4, %14, %14, %32, %33, %33, %34) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/modules/pooling.py:595:0
+  %input.12 : Tensor = aten::mul(%output.2, %36) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %qinput.6 : Tensor = vai::fix_neuron(%input.12, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.6 : Tensor = vai::fix_neuron(%39, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.6 : Tensor = vai::fix_neuron(%41, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %42 : Tensor = aten::conv2d(%qinput.6, %qweight.6, %qbias.6, %14, %32, %14, %7)
+  %qother.2 : Tensor = vai::fix_neuron(%42, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.8 : Tensor = vai::fix_neuron(%45, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.8 : Tensor = vai::fix_neuron(%48, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %49 : Tensor = aten::conv2d(%input0.4, %qweight.8, %qbias.8, %14, %32, %14, %7)
+  %input.18 : Tensor = aten::relu_(%49) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.8 : Tensor = vai::fix_neuron(%input.18, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.10 : Tensor = vai::fix_neuron(%53, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.10 : Tensor = vai::fix_neuron(%55, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %57 : Tensor = aten::conv2d(%qinput.8, %qweight.10, %qbias.10, %14, %14, %14, %7)
+  %input.22 : Tensor = aten::relu_(%57) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.10 : Tensor = vai::fix_neuron(%input.22, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.12 : Tensor = vai::fix_neuron(%61, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.12 : Tensor = vai::fix_neuron(%63, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %64 : Tensor = aten::conv2d(%qinput.10, %qweight.12, %qbias.12, %14, %32, %14, %7)
+  %qinput.12 : Tensor = vai::fix_neuron(%64, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.26 : Tensor = aten::add(%qinput.12, %qother.2, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.28 : Tensor = aten::relu_(%input.26) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.14 : Tensor = vai::fix_neuron(%input.28, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.14 : Tensor = vai::fix_neuron(%70, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.14 : Tensor = vai::fix_neuron(%73, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %74 : Tensor = aten::conv2d(%qinput.14, %qweight.14, %qbias.14, %14, %32, %14, %7)
+  %input.32 : Tensor = aten::relu_(%74) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.16 : Tensor = vai::fix_neuron(%input.32, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.16 : Tensor = vai::fix_neuron(%78, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.16 : Tensor = vai::fix_neuron(%80, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %81 : Tensor = aten::conv2d(%qinput.16, %qweight.16, %qbias.16, %14, %14, %14, %7)
+  %input.36 : Tensor = aten::relu_(%81) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.18 : Tensor = vai::fix_neuron(%input.36, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.18 : Tensor = vai::fix_neuron(%85, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.18 : Tensor = vai::fix_neuron(%87, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %88 : Tensor = aten::conv2d(%qinput.18, %qweight.18, %qbias.18, %14, %32, %14, %7)
+  %qinput.20 : Tensor = vai::fix_neuron(%88, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.40 : Tensor = aten::add(%qinput.20, %qinput.14, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.42 : Tensor = aten::relu_(%input.40) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %input0.6 : Tensor = vai::fix_neuron(%input.42, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %output.4 : Tensor = aten::avg_pool2d(%input0.6, %13, %13, %32, %33, %33, %34) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/modules/pooling.py:595:0
+  %input.44 : Tensor = aten::mul(%output.4, %36) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %qinput.22 : Tensor = vai::fix_neuron(%input.44, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.20 : Tensor = vai::fix_neuron(%97, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.20 : Tensor = vai::fix_neuron(%99, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %100 : Tensor = aten::conv2d(%qinput.22, %qweight.20, %qbias.20, %14, %32, %14, %7)
+  %qother.4 : Tensor = vai::fix_neuron(%100, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.22 : Tensor = vai::fix_neuron(%103, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.22 : Tensor = vai::fix_neuron(%105, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %106 : Tensor = aten::conv2d(%input0.6, %qweight.22, %qbias.22, %14, %32, %14, %7)
+  %input.50 : Tensor = aten::relu_(%106) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.24 : Tensor = vai::fix_neuron(%input.50, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.24 : Tensor = vai::fix_neuron(%110, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.24 : Tensor = vai::fix_neuron(%112, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %113 : Tensor = aten::conv2d(%qinput.24, %qweight.24, %qbias.24, %13, %14, %14, %7)
+  %input.54 : Tensor = aten::relu_(%113) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.26 : Tensor = vai::fix_neuron(%input.54, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.26 : Tensor = vai::fix_neuron(%117, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.26 : Tensor = vai::fix_neuron(%119, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %120 : Tensor = aten::conv2d(%qinput.26, %qweight.26, %qbias.26, %14, %32, %14, %7)
+  %qinput.28 : Tensor = vai::fix_neuron(%120, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.58 : Tensor = aten::add(%qinput.28, %qother.4, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.60 : Tensor = aten::relu_(%input.58) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.30 : Tensor = vai::fix_neuron(%input.60, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.28 : Tensor = vai::fix_neuron(%126, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.28 : Tensor = vai::fix_neuron(%128, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %129 : Tensor = aten::conv2d(%qinput.30, %qweight.28, %qbias.28, %14, %32, %14, %7)
+  %input.64 : Tensor = aten::relu_(%129) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.32 : Tensor = vai::fix_neuron(%input.64, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.30 : Tensor = vai::fix_neuron(%133, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.30 : Tensor = vai::fix_neuron(%135, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %136 : Tensor = aten::conv2d(%qinput.32, %qweight.30, %qbias.30, %14, %14, %14, %7)
+  %input.68 : Tensor = aten::relu_(%136) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.34 : Tensor = vai::fix_neuron(%input.68, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.32 : Tensor = vai::fix_neuron(%140, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.32 : Tensor = vai::fix_neuron(%142, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %143 : Tensor = aten::conv2d(%qinput.34, %qweight.32, %qbias.32, %14, %32, %14, %7)
+  %qinput.36 : Tensor = vai::fix_neuron(%143, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.72 : Tensor = aten::add(%qinput.36, %qinput.30, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.74 : Tensor = aten::relu_(%input.72) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.38 : Tensor = vai::fix_neuron(%input.74, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.34 : Tensor = vai::fix_neuron(%149, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.34 : Tensor = vai::fix_neuron(%151, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %152 : Tensor = aten::conv2d(%qinput.38, %qweight.34, %qbias.34, %14, %32, %14, %7)
+  %input.78 : Tensor = aten::relu_(%152) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.40 : Tensor = vai::fix_neuron(%input.78, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.36 : Tensor = vai::fix_neuron(%156, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.36 : Tensor = vai::fix_neuron(%158, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %159 : Tensor = aten::conv2d(%qinput.40, %qweight.36, %qbias.36, %14, %14, %14, %7)
+  %input.82 : Tensor = aten::relu_(%159) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.42 : Tensor = vai::fix_neuron(%input.82, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.38 : Tensor = vai::fix_neuron(%163, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.38 : Tensor = vai::fix_neuron(%165, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %166 : Tensor = aten::conv2d(%qinput.42, %qweight.38, %qbias.38, %14, %32, %14, %7)
+  %qinput.44 : Tensor = vai::fix_neuron(%166, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.86 : Tensor = aten::add(%qinput.44, %qinput.38, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.88 : Tensor = aten::relu_(%input.86) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %input0.8 : Tensor = vai::fix_neuron(%input.88, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %output.6 : Tensor = aten::avg_pool2d(%input0.8, %13, %13, %32, %33, %33, %34) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/modules/pooling.py:595:0
+  %input.90 : Tensor = aten::mul(%output.6, %36) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %qinput.46 : Tensor = vai::fix_neuron(%input.90, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.40 : Tensor = vai::fix_neuron(%175, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.40 : Tensor = vai::fix_neuron(%177, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %178 : Tensor = aten::conv2d(%qinput.46, %qweight.40, %qbias.40, %14, %32, %14, %7)
+  %qother.6 : Tensor = vai::fix_neuron(%178, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.42 : Tensor = vai::fix_neuron(%181, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.42 : Tensor = vai::fix_neuron(%183, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %184 : Tensor = aten::conv2d(%input0.8, %qweight.42, %qbias.42, %14, %32, %14, %7)
+  %input.96 : Tensor = aten::relu_(%184) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.48 : Tensor = vai::fix_neuron(%input.96, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.44 : Tensor = vai::fix_neuron(%188, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.44 : Tensor = vai::fix_neuron(%190, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %191 : Tensor = aten::conv2d(%qinput.48, %qweight.44, %qbias.44, %13, %14, %14, %7)
+  %input.100 : Tensor = aten::relu_(%191) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.50 : Tensor = vai::fix_neuron(%input.100, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.46 : Tensor = vai::fix_neuron(%195, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.46 : Tensor = vai::fix_neuron(%197, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %198 : Tensor = aten::conv2d(%qinput.50, %qweight.46, %qbias.46, %14, %32, %14, %7)
+  %qinput.52 : Tensor = vai::fix_neuron(%198, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.104 : Tensor = aten::add(%qinput.52, %qother.6, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.106 : Tensor = aten::relu_(%input.104) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.54 : Tensor = vai::fix_neuron(%input.106, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.48 : Tensor = vai::fix_neuron(%204, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.48 : Tensor = vai::fix_neuron(%206, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %207 : Tensor = aten::conv2d(%qinput.54, %qweight.48, %qbias.48, %14, %32, %14, %7)
+  %input.110 : Tensor = aten::relu_(%207) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.56 : Tensor = vai::fix_neuron(%input.110, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.50 : Tensor = vai::fix_neuron(%211, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.50 : Tensor = vai::fix_neuron(%213, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %214 : Tensor = aten::conv2d(%qinput.56, %qweight.50, %qbias.50, %14, %14, %14, %7)
+  %input.114 : Tensor = aten::relu_(%214) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.58 : Tensor = vai::fix_neuron(%input.114, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.52 : Tensor = vai::fix_neuron(%218, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.52 : Tensor = vai::fix_neuron(%220, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %221 : Tensor = aten::conv2d(%qinput.58, %qweight.52, %qbias.52, %14, %32, %14, %7)
+  %qinput.60 : Tensor = vai::fix_neuron(%221, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.118 : Tensor = aten::add(%qinput.60, %qinput.54, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.120 : Tensor = aten::relu_(%input.118) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.62 : Tensor = vai::fix_neuron(%input.120, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.54 : Tensor = vai::fix_neuron(%227, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.54 : Tensor = vai::fix_neuron(%229, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %230 : Tensor = aten::conv2d(%qinput.62, %qweight.54, %qbias.54, %14, %32, %14, %7)
+  %input.124 : Tensor = aten::relu_(%230) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.64 : Tensor = vai::fix_neuron(%input.124, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.56 : Tensor = vai::fix_neuron(%234, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.56 : Tensor = vai::fix_neuron(%236, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %237 : Tensor = aten::conv2d(%qinput.64, %qweight.56, %qbias.56, %14, %14, %14, %7)
+  %input.128 : Tensor = aten::relu_(%237) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.66 : Tensor = vai::fix_neuron(%input.128, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.58 : Tensor = vai::fix_neuron(%241, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.58 : Tensor = vai::fix_neuron(%243, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %244 : Tensor = aten::conv2d(%qinput.66, %qweight.58, %qbias.58, %14, %32, %14, %7)
+  %qinput.68 : Tensor = vai::fix_neuron(%244, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.132 : Tensor = aten::add(%qinput.68, %qinput.62, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.134 : Tensor = aten::relu_(%input.132) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.70 : Tensor = vai::fix_neuron(%input.134, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.60 : Tensor = vai::fix_neuron(%250, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.60 : Tensor = vai::fix_neuron(%252, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %253 : Tensor = aten::conv2d(%qinput.70, %qweight.60, %qbias.60, %14, %32, %14, %7)
+  %input.138 : Tensor = aten::relu_(%253) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.72 : Tensor = vai::fix_neuron(%input.138, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.62 : Tensor = vai::fix_neuron(%257, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.62 : Tensor = vai::fix_neuron(%259, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %260 : Tensor = aten::conv2d(%qinput.72, %qweight.62, %qbias.62, %14, %14, %14, %7)
+  %input.142 : Tensor = aten::relu_(%260) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.74 : Tensor = vai::fix_neuron(%input.142, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.64 : Tensor = vai::fix_neuron(%264, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.64 : Tensor = vai::fix_neuron(%266, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %267 : Tensor = aten::conv2d(%qinput.74, %qweight.64, %qbias.64, %14, %32, %14, %7)
+  %qinput.76 : Tensor = vai::fix_neuron(%267, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.146 : Tensor = aten::add(%qinput.76, %qinput.70, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.148 : Tensor = aten::relu_(%input.146) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.78 : Tensor = vai::fix_neuron(%input.148, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.66 : Tensor = vai::fix_neuron(%273, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.66 : Tensor = vai::fix_neuron(%275, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %276 : Tensor = aten::conv2d(%qinput.78, %qweight.66, %qbias.66, %14, %32, %14, %7)
+  %input.152 : Tensor = aten::relu_(%276) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.80 : Tensor = vai::fix_neuron(%input.152, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.68 : Tensor = vai::fix_neuron(%280, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.68 : Tensor = vai::fix_neuron(%282, %2, %3, %4, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %283 : Tensor = aten::conv2d(%qinput.80, %qweight.68, %qbias.68, %14, %14, %14, %7)
+  %input.156 : Tensor = aten::relu_(%283) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.82 : Tensor = vai::fix_neuron(%input.156, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.70 : Tensor = vai::fix_neuron(%287, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.70 : Tensor = vai::fix_neuron(%289, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %290 : Tensor = aten::conv2d(%qinput.82, %qweight.70, %qbias.70, %14, %32, %14, %7)
+  %qinput.84 : Tensor = vai::fix_neuron(%290, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.160 : Tensor = aten::add(%qinput.84, %qinput.78, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.162 : Tensor = aten::relu_(%input.160) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %input0.10 : Tensor = vai::fix_neuron(%input.162, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %output.8 : Tensor = aten::avg_pool2d(%input0.10, %13, %13, %32, %33, %33, %34) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/modules/pooling.py:595:0
+  %input.164 : Tensor = aten::mul(%output.8, %36) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/avgpool.py:71:0
+  %qinput.86 : Tensor = vai::fix_neuron(%input.164, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.72 : Tensor = vai::fix_neuron(%299, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.72 : Tensor = vai::fix_neuron(%301, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %302 : Tensor = aten::conv2d(%qinput.86, %qweight.72, %qbias.72, %14, %32, %14, %7)
+  %qother.1 : Tensor = vai::fix_neuron(%302, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.74 : Tensor = vai::fix_neuron(%305, %2, %3, %71, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.74 : Tensor = vai::fix_neuron(%307, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %308 : Tensor = aten::conv2d(%input0.10, %qweight.74, %qbias.74, %14, %32, %14, %7)
+  %input.170 : Tensor = aten::relu_(%308) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.88 : Tensor = vai::fix_neuron(%input.170, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.76 : Tensor = vai::fix_neuron(%312, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.76 : Tensor = vai::fix_neuron(%314, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %315 : Tensor = aten::conv2d(%qinput.88, %qweight.76, %qbias.76, %13, %14, %14, %7)
+  %input.174 : Tensor = aten::relu_(%315) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.90 : Tensor = vai::fix_neuron(%input.174, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.78 : Tensor = vai::fix_neuron(%319, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.78 : Tensor = vai::fix_neuron(%321, %2, %3, %23, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %322 : Tensor = aten::conv2d(%qinput.90, %qweight.78, %qbias.78, %14, %32, %14, %7)
+  %qinput.92 : Tensor = vai::fix_neuron(%322, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.178 : Tensor = aten::add(%qinput.92, %qother.1, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.180 : Tensor = aten::relu_(%input.178) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.94 : Tensor = vai::fix_neuron(%input.180, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.80 : Tensor = vai::fix_neuron(%328, %2, %3, %329, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.80 : Tensor = vai::fix_neuron(%331, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %332 : Tensor = aten::conv2d(%qinput.94, %qweight.80, %qbias.80, %14, %32, %14, %7)
+  %input.184 : Tensor = aten::relu_(%332) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.96 : Tensor = vai::fix_neuron(%input.184, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.82 : Tensor = vai::fix_neuron(%336, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.82 : Tensor = vai::fix_neuron(%338, %2, %3, %56, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %339 : Tensor = aten::conv2d(%qinput.96, %qweight.82, %qbias.82, %14, %14, %14, %7)
+  %input.188 : Tensor = aten::relu_(%339) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.98 : Tensor = vai::fix_neuron(%input.188, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.84 : Tensor = vai::fix_neuron(%343, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.84 : Tensor = vai::fix_neuron(%345, %2, %3, %346, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %347 : Tensor = aten::conv2d(%qinput.98, %qweight.84, %qbias.84, %14, %32, %14, %7)
+  %qinput.100 : Tensor = vai::fix_neuron(%347, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.192 : Tensor = aten::add(%qinput.100, %qinput.94, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.194 : Tensor = aten::relu_(%input.192) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.102 : Tensor = vai::fix_neuron(%input.194, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.86 : Tensor = vai::fix_neuron(%353, %2, %3, %329, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.86 : Tensor = vai::fix_neuron(%355, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %356 : Tensor = aten::conv2d(%qinput.102, %qweight.86, %qbias.86, %14, %32, %14, %7)
+  %input.198 : Tensor = aten::relu_(%356) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.104 : Tensor = vai::fix_neuron(%input.198, %2, %3, %56, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.88 : Tensor = vai::fix_neuron(%360, %2, %3, %46, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.88 : Tensor = vai::fix_neuron(%362, %2, %3, %10, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %363 : Tensor = aten::conv2d(%qinput.104, %qweight.88, %qbias.88, %14, %14, %14, %7)
+  %input.202 : Tensor = aten::relu_(%363) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %qinput.106 : Tensor = vai::fix_neuron(%input.202, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qweight.1 : Tensor = vai::fix_neuron(%367, %2, %3, %20, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %qbias.1 : Tensor = vai::fix_neuron(%369, %2, %3, %23, %5, %6, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %370 : Tensor = aten::conv2d(%qinput.106, %qweight.1, %qbias.1, %14, %32, %14, %7)
+  %qinput.1 : Tensor = vai::fix_neuron(%370, %2, %3, %10, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %input.206 : Tensor = aten::add(%qinput.1, %qinput.102, %7) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/add.py:34:0
+  %input.208 : Tensor = aten::relu_(%input.206) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1134:0
+  %input0.12 : Tensor = vai::fix_neuron(%input.208, %2, %3, %23, %5, %17, %7, %5) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  return (%input0.12)
+
+]
+
+
+SegmentBlock: [
+id: 2
+type: Torch
+format: NCHW
+type and shape defined: 0
+input_shapes:
+input_type : [ ]
+number of ops(excluding consts and fixneurons): 7
+subgraph graph: 
+graph(%input0.12 : Tensor):
+  %2 : int[] = prim::Constant[value=[1, 1]]()
+  %4 : Tensor = prim::Constant[value={0.976562}]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/adaptive_avg_pool.py:82:0
+  %6 : int = prim::Constant[value=-128]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %7 : int = prim::Constant[value=127]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %8 : float = prim::Constant[value=8.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %9 : int = prim::Constant[value=0]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %10 : int = prim::Constant[value=2]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %11 : int = prim::Constant[value=1]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %14 : int = prim::Constant[value=-1]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/module_template.py:131:0
+  %17 : NoneType = prim::Constant() # :0:0
+  %19 : Float(1000, strides=[1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %20 : float = prim::Constant[value=256.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %21 : int = prim::Constant[value=3]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %23 : Float(1000, 1640, strides=[1640, 1], requires_grad=0, device=cpu) = prim::Constant[value=<Tensor>]()
+  %24 : float = prim::Constant[value=128.]() # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %output.10 : Tensor = aten::adaptive_avg_pool2d(%input0.12, %2) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:936:0
+  %input.210 : Tensor = aten::mul(%output.10, %4) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/adaptive_avg_pool.py:82:0
+  %input0.1 : Tensor = vai::fix_neuron(%input.210, %6, %7, %8, %9, %10, %11, %9) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %12 : int = aten::size(%input0.1, %9) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/module_template.py:163:0
+  %13 : int[] = prim::ListConstruct(%12, %14)
+  %output.1 : Tensor = aten::reshape(%input0.1, %13) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/module_template.py:131:0
+  %input.212 : Tensor = aten::clone(%output.1, %17) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/module_template.py:133:0
+  %bias.3 : Tensor = vai::fix_neuron(%19, %6, %7, %20, %9, %21, %11, %9) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %weight.3 : Tensor = vai::fix_neuron(%23, %6, %7, %24, %9, %21, %11, %9) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  %25 : Tensor = aten::linear(%input.212, %weight.3, %bias.3) # /home/zhaolin/.local/lib/python3.6/site-packages/torch/nn/functional.py:1690:0
+  %26 : Tensor = vai::fix_neuron(%25, %6, %7, %8, %9, %10, %11, %9) # /proj/xcdhdstaff2/zhaolin/code/regression/nndct/pytorch_binding/pytorch_nndct/nn/modules/fix_ops.py:220:0
+  return (%26)
+
+]
+
+

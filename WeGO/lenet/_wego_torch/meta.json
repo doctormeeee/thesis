@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "DPUCVDX8H_ISA1_F2W2_8PE_compiled_vai_wego_torch_op_5.xmodel",
+    "kernel": [
+        "subgraph_17"
+    ],
+    "target": "DPUCVDX8H_ISA1_F2W2_8PE"
+}

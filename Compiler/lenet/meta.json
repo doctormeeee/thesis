@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "lenet.xmodel",
+    "kernel": [
+        "subgraph_MyLeNet5__MyLeNet5_AvgPool2d_s2__input_5_fix"
+    ],
+    "target": "DPUCVDX8H_ISA1_F2W2_8PE"
+}

@@ -1,0 +1,8 @@
+{
+    "lib": "libvart-dpu-runner.so",
+    "filename": "resnet18_pt.xmodel",
+    "kernel": [
+        "subgraph_ResNet__ResNet_AdaptiveAvgPool2d_avgpool__3211_fix"
+    ],
+    "target": "DPUCVDX8H_ISA1_F2W2_8PE"
+}

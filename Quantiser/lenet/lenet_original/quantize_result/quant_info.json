@@ -1,0 +1,33 @@
+{
+  "param":
+  {
+    "MyLeNet5::c1.weight":[[8,7]],
+    "MyLeNet5::c1.bias":[[8,12]],
+    "MyLeNet5::c3.weight":[[8,8]],
+    "MyLeNet5::c3.bias":[[8,9]],
+    "MyLeNet5::c5.weight":[[8,8]],
+    "MyLeNet5::c5.bias":[[8,10]],
+    "MyLeNet5::f6.weight":[[8,9]],
+    "MyLeNet5::f6.bias":[[8,9]],
+    "MyLeNet5::output.weight":[[8,8]],
+    "MyLeNet5::output.bias":[[8,9]]
+  },
+  "output":
+  {
+    "MyLeNet5::input_0":[[8,6]],
+    "MyLeNet5::MyLeNet5/ReLU[relu]/243":[[8,5]],
+    "MyLeNet5::MyLeNet5/AvgPool2d[s2]/input.5":[[8,5]],
+    "MyLeNet5::MyLeNet5/ReLU[relu]/276":[[8,4]],
+    "MyLeNet5::MyLeNet5/AvgPool2d[s4]/input":[[8,5]],
+    "MyLeNet5::MyLeNet5/Conv2d[c5]/308":[[8,5]],
+    "MyLeNet5::MyLeNet5/Linear[f6]/312":[[8,4]],
+    "MyLeNet5::MyLeNet5/Linear[output]/313":[[8,2]]
+  },
+  "input":
+  {
+
+  },
+  "fast_finetuned":false,
+  "bias_corrected":true,
+  "version":"3.0.0+a44284e+torch1.12.1"
+}
